@@ -1,0 +1,13 @@
+name: Build AMX
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: openmultiplayer/setup-pawncc@v1
+      - run: pawncc cases.pwn -ocases.amx
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cases-amx
+          path: cases.amx
