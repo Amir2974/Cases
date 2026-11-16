@@ -1,4 +1,4 @@
-name: Build AMX
+concurrency: name: Build AMX
 on: [push]
 jobs:
   build:
